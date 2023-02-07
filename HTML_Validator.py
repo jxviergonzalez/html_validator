@@ -22,17 +22,14 @@ def validate_html(html):
     # the main difference between your code and the code from class
     # will be that you will have to keep track of not just the 3,
     # but arbitrary text located between the html tags
-
     taglist = _extract_tags(html)
     if len(html) == 0:
         return True
     if not taglist:
         return False
-
     stack = []
     index = 0
     balanced = True
-
     while index < len(taglist) and balanced:
         tag = taglist[index]
         tagname = tag[1:-1]
